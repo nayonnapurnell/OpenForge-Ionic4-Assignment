@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>GithubUsers</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Github Users</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>
+
+    <ion-item>
+        <ion-label>Select Searchtype</ion-label>
+        <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
+          <ion-select-option value="">All</ion-select-option>
+          <ion-select-option value="name">Name</ion-select-option>
+          <ion-select-option value="avatar_url">Url</ion-select-option>
+        </ion-select>
+      </ion-item>
 
 </ion-content>
